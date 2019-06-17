@@ -1,8 +1,8 @@
 # ssmBlog
-基于 Spring + Springmvc + Mybatis + shior + Bootstrap 的个人博客
+ssm框架的个人博客
 
-前端 : Bootstrap
-后台: Spring + Springmvc + Mybatis + shior
+#### 前端 : Bootstrap
+#### 后台: Spring + Springmvc + Mybatis + shior
 
 
 [在线预览](http://qihui.pro)
