@@ -8,7 +8,7 @@
 #### 前端页面
 ![主页](https://github.com/qihui1223/ssmBlog/blob/master/img/1.png)
 
-![分类](/blob/master/img/2.png)
+![分类](img/2.png)
 
 ![归档](\img\3.png)
 
