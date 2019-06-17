@@ -1,5 +1,5 @@
 # ssmBlog
-基于 Spring + Springmvc + Mybatis + Bootstrap 的个人博客
+基于 Spring + Springmvc + Mybatis + shior + Bootstrap 的个人博客
 
 [在线预览](http://qihui.pro)
 
