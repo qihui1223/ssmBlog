@@ -1,0 +1,73 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2019-05-08 15:48:13
+ * @version $Id$
+ */
+ .detail{
+ 	box-sizing: border-box;
+    padding: 15px 40px 5px 40px;
+    background: #fff;
+    min-height: 700px;
+    box-shadow: initial;
+    border-radius: initial;
+    margin-bottom: 10px;
+ }
+ .article {
+ 	font-size: 21px;
+    text-align: center;
+    overflow:hidden;     
+    white-space:nowrap;  
+    text-overflow:ellipsis;
+}
+.article a {
+    font-size:20px;
+    color: #000000;
+    line-height: 40px;
+}
+.post-body {
+    line-height: 24px;
+    padding: 0 10px;
+}
+/*确定图片大小*/
+.post-body .image{
+	text-align: center;
+}
+.post-body .image img{
+	width: 500px;
+}
+.post-body p {
+    display: block;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+
+
+.post-meta {
+  margin: 3px 0 30px 0;
+  color: #999;
+  font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 12px;
+  text-align: center;
+}
+.post-meta .post-category-list {
+  display: inline-block;
+  margin: 0;
+  padding: 3px;
+}
+.post-meta .post-category-list-link {
+  color: #999;
+}
+.post-meta .post-description {
+  font-size: 14px;
+  margin-top: 2px;
+}
+.post-meta-divider {
+  margin: 0 0.5em;
+}
+.post-meta-item-icon {
+  margin-right: 3px;
+}

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+		<!-- 注册属性文件 -->
+		<context:property-placeholder location="classpath:jdbc.properties"/>
+		
+		<!-- druid数据库连接池 -->
+		<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
+	        <!-- 基本属性 url、user、password -->
+	        <property name="driverClassName" value="${jdbc.driver}" />
+	        <property name="url" value="${jdbc.url}" />
+	        <property name="username" value="${jdbc.user}" />
+	        <property name="password" value="${jdbc.password}" />
+
+	        <!-- <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+	        <property name="url" value="jdbc:mysql://127.0.0.1:3306/test" />
+	        <property name="username" value="root" />
+	        <property name="password" value="123456" /> -->
+	        <!-- 配置初始化大小、最小、最大 -->
+	        <property name="initialSize" value="3" />
+	        <!-- 连接池最小空闲 -->
+	        <property name="minIdle" value="3" />
+	        <!-- 连接池最大数量 -->
+	        <property name="maxActive" value="20" />
+	        <!-- 配置获取连接等待超时的时间 -->
+	        <property name="maxWait" value="60000" />
+	 
+	        <!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
+	        <property name="timeBetweenEvictionRunsMillis" value="60000" />
+	 
+	        <!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
+	        <property name="minEvictableIdleTimeMillis" value="300000" />
+	        
+	        <!-- 用来检测连接是否有效的sql，要求是一个查询语句-->
+	        <property name="validationQuery" value="select 'x' FROM DUAL"/>
+	        <!-- 申请连接时执行validationQuery检测连接是否有效，配置为true会降低性能 -->
+	        <property name="testWhileIdle" value="true"/>
+	        <property name="testOnBorrow" value="false"/>
+	        <!-- 归还连接时执行validationQuery检测连接是否有效，配置为true会降低性能  -->
+	        <property name="testOnReturn" value="false"/>
+	        <!-- 打开PSCache，并且指定每个连接上PSCache的大小 -->
+	        <property name="poolPreparedStatements" value="true"/>
+	        <property name="maxPoolPreparedStatementPerConnectionSize" value="20"/>
+	        <!--配置监控统计拦截的filters，属性类型是字符串，通过别名的方式配置扩展插件，常用的插件有：监控统计用的filter:stat；日志用的filter:log4j；防御SQL注入的filter:wall -->
+	        <property name="filters" value="stat,wall,slf4j"/>
+	        <!-- 通过connectProperties属性来打开mergeSql功能；慢SQL记录-->
+	         <property name="connectionProperties" value="druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000" />
+	        <!-- 关闭abanded连接时输出错误日志 -->
+	        <property name="logAbandoned" value="true"/>
+	    </bean>
+</beans>

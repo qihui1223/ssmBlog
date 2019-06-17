@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="pro.qh.dao.ICategoryDao">
+
+	<resultMap type="Category" id="CategoryMapper">
+		<id column="id" property="id"/>
+		<result column="typeName" property="typeName"/>
+		<result column="status" property="status"/>
+		<!-- <association property="blog" 
+			select="selectByBlogDid"
+			column="id"
+			javaType="Blog"/> -->
+		<!-- 这里要注意的是column对应的是Category中的外键，而且需是表字段名 -->
+		
+		<!-- 关联属性映射关系 -->
+		<!-- 集合的数据来自于指定的select查询
+			而该select查询的参数来自于column指定的字段值 -->
+		<collection property="blog" ofType="Blog"
+			select="selectByBlogDid"
+			column="id"/>
+	</resultMap>
+
+	<select id="selectTags" resultType="Category">
+		select id,typeName,status from category
+	</select>
+	
+	<select id="selectByBlogDid" resultType="int">
+		select count(*) from blog where dId = #{xxx}
+	</select>
+	
+	<select id="selectCategory" resultMap="CategoryMapper">
+		select id,typeName,status from category
+	</select>
+	
+	<select id="selectCategoryById" resultMap="CategoryMapper">
+		select id,typeName,status from category where id=#{xxx}
+	</select>
+	
+	<insert id="saveCategory" parameterType="Category">
+		insert into category (id,typeName,status) values (#{id},#{typeName},#{status})
+	</insert>
+	
+	<update id="updateCategory">
+		update category set typeName=#{typeName},status=#{status} where id=#{id}
+	</update>
+	
+	<delete id="deleteCategory">
+		delete from category where id=#{id}
+	</delete>
+</mapper>

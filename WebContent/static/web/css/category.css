@@ -1,0 +1,40 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2019-05-08 13:48:47
+ * @version $Id$
+ */
+.category{
+ 	box-sizing: border-box;
+    padding: 5px 40px 0 40px;
+    background: #fff;
+    min-height: 700px;
+    box-shadow: initial;
+    border-radius: initial;
+ }
+ .category h1{
+ 	text-align: center;
+ }
+.all-page {
+    box-sizing: border-box;
+    padding: 40px;
+    /* width: 700px; */
+    background: #fff;
+    min-height: 700px;
+    box-shadow: initial;
+    border-radius: initial;
+}
+.all-page > h1{
+	text-align: center;
+    margin-bottom: 0px;
+}
+.all-page-title {
+    text-align: center;
+    padding: 10px 0;
+    margin-bottom: 25px;
+}
+
+.allpage > ul > li{
+	list-style-type: circle;
+}

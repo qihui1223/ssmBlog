@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+    <!-- 自定义Realm -->
+	<bean id="myRealm" class="pro.qh.realm.UserRealm"/>  
+
+	
+	<!-- shiro结合Session会话管理器 start -->
+    <bean id="sessionManager" class="org.apache.shiro.web.session.mgt.DefaultWebSessionManager">
+        <!-- session的失效时长，单位毫秒 1小时: 3600000, itzixi站点设置以 6小时 为主：21600000 -->
+        <!-- 设置全局会话超时时间，默认30分钟，即如果30分钟内没有访问会话将过期 1800000 -->
+        <property name="globalSessionTimeout" value="21600000"/>
+        <!-- 删除失效的session -->
+        <property name="deleteInvalidSessions" value="true"/>
+        <!-- 是否开启会话验证器，默认是开启的 -->
+        <property name="sessionValidationSchedulerEnabled" value="true"/>
+    </bean>
+
+	<!-- 安全管理器 -->
+	<!-- <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager"/> -->
+	<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+		<property name="realm" ref="myRealm" />
+		<!-- 配置sessionManager，提供session管理 -->
+		<property name="sessionManager" ref="sessionManager"></property>
+	</bean>
+	
+	<!-- Shiro过滤器 -->
+	<bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">  
+	    <!-- Shiro的核心安全接口,这个属性是必须的 -->  
+	    <property name="securityManager" ref="securityManager"/>
+	    <!-- 身份认证失败，则跳转到登录页面的配置 -->  
+	    <property name="loginUrl" value="/login.jsp"/>
+	    <!-- 权限认证失败，则跳转到指定页面 -->  
+	    <property name="unauthorizedUrl" value="/unauthorized.jsp"/> 
+        <!-- 自定义的过滤器链，从上向下执行，一般将`/**`放到最下面 --> 
+	    <!-- Shiro连接约束配置,即过滤链的定义 -->  
+	    <property name="filterChainDefinitions"> 
+	        <value> 
+	        	 <!-- 静态资源不拦截 -->
+                /static/** = anon
+                /lib/** = anon
+                /js/** = anon
+                <!-- 登录页面不拦截 -->
+                /login.jsp = anon
+                /login.do = anon
+                <!-- authc表示访问该地址用户必须身份验证通过，即Subject.isAuthenticated() == true -->
+				/admin/**=authc
+				/admin/main.do=authc
+				/student=roles[teacher]
+				/teacher=perms["user:create"]
+				
+				<!-- Shiro提供了退出登录的配置`logout`，会生成路径为`/logout`的请求地址，访问这个地址即会退出当前账户并清空缓存
+                /logout = logout
+                user表示身份通过或通过记住我通过的用户都能访问系统
+                /index.jsp = user
+                authc表示访问该地址用户必须身份验证通过，即Subject.isAuthenticated() == true
+                /authenticated.jsp = authc -->
+                <!-- `/**`表示所有请求，表示访问该地址的用户是身份验证通过或RememberMe登录的都可以 -->
+                <!-- /** = user -->
+	        </value>  
+	    </property>
+	</bean>  
+	
+	<!-- 保证实现了Shiro内部lifecycle函数的bean执行  Shiro生命周期处理器-->  
+	<bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor"/>  
+	
+	<!-- 开启Shiro注解 -->
+	<bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator" depends-on="lifecycleBeanPostProcessor"/>  
+  		<bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">  
+  	  	<property name="securityManager" ref="securityManager"/>  
+    </bean>  
+</beans>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="pro.qh.dao.IBlogDao">
+
+	<resultMap type="Blog" id="BlogMapper">
+		<id column="id" property="id"/>
+		<result column="title" property="title"/>
+		<result column="content" property="content"/>
+		<result column="md" property="md"/>
+		<result column="dId" property="dId"/>
+		<result column="createdtime" property="createdtime"/>
+		<result column="updatetime" property="updatetime"/>
+		<association property="category" 
+			select="selectByCategoryId"
+			column="dId"
+			javaType="Category">
+			<!-- 这里要注意的是column对应的是Blog中的外键，而且需是表字段名 -->
+		</association>
+	</resultMap>
+	
+	<select id="selectByCategoryId" resultType="Category">
+		select id,typeName,status from category where id = #{dId}
+	</select>
+	
+	<select id="selectArticle" resultMap="BlogMapper">
+		select id, title, content, md, dId, createdtime, updatetime from blog 
+	</select>
+
+	<select id="selectArticleById" resultMap="BlogMapper">
+		select id, title, content, md, dId, createdtime, updatetime from blog where id = #{id}
+	</select>
+
+	<insert id="insertBlog">
+		insert into 
+		blog (id, title, content, md, dId, createdtime, updatetime)
+	   	values (#{id}, #{title},#{content}, #{md},#{dId},now(),now())
+	</insert>
+
+	<update id="updateArticle">
+		update blog 
+		set title=#{title},content=#{content},
+		md=#{md}, dId=#{dId},createdtime=#{createdtime},updatetime=now()
+		where id=#{id}
+	</update>
+	
+	<delete id="deleteArticleById">
+		delete from blog where id=#{id}
+	</delete>
+	
+	<!-- 模糊查询 -->
+	<select id="queryArticle" resultMap="BlogMapper">
+		select id, title, content, md, dId, createdtime, updatetime from blog <!-- where title like "%${title}%" -->
+		<where>
+            <if test="_parameter!=null and _parameter!=''">title LIKE concat('%',#{title},'%')</if>
+        </where>
+	</select>
+</mapper>

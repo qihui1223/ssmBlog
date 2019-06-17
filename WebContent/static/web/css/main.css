@@ -1,0 +1,243 @@
+/*list star*/
+.list-box{
+	box-sizing: border-box;
+    padding: 5px 40px 5px 40px;
+    background: #fff;
+    min-height: 700px;
+    box-shadow: initial;
+    border-radius: initial;
+}
+.list-box ul{
+	margin-top: 10px;
+}
+.list-items {
+    display: flex;
+    background-color: #fff;
+    box-shadow: 0 0 5px #aaa;
+    transition: box-shadow ease-in 300ms;
+    padding: 20px 25px;
+    margin-bottom: 20px;
+}
+.list-items:hover{
+    box-shadow: 0 0 15px #aaa;
+    transition: box-shadow ease-in 300ms;
+}
+.list-items-inner {
+    width: 680px;
+}
+.article {
+    width: 300px;
+    /*单行文本溢出*/
+    overflow:hidden;     
+    white-space:nowrap;  
+    text-overflow:ellipsis;
+}
+.article a {
+    font-size:20px;
+    color: #000000;
+    line-height: 40px;
+}
+
+.article-desc > figure {
+	width:300px;
+}
+
+.article-desc > figure img{
+	width:300px;
+}
+
+.article-footer {
+    margin-top: 10px;
+    font-size: 13px;
+}
+
+.article-footer .article-viewinfo {
+    display: inline;
+    float: right;
+}
+
+.article-footer .article-author {
+    display: inline;
+}
+
+.article-footer > span {
+    padding-right: 3%;
+}
+
+.article-footer a {
+    color: #009688;
+}
+
+.icon-stick {
+    font-size: 14px;
+}
+
+
+
+.tag-group {
+    
+}
+.tag-group span {
+    color: #999;
+    line-height: 40px;
+    margin-right: 20px;
+}
+.article-desc {
+    color: #666;
+    line-height: 30px;
+    /*多行文本溢出*/
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+.list-items-icon {
+    flex: 1;
+    height: 200px;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.list-items-icon img {
+    width: 100%;
+}
+/* .book-bg {
+    background-image: url('../images/web.jpg')
+} */
+.articleLink {
+    width: 90px;
+    height: 30px;
+    line-height: 30px;
+    text-align: left;
+    border-radius:5px;
+    margin-top: 10px;
+}
+.articleLink a {
+    color: #1890ff;
+    font-weight: bold;
+    font-size: 14px;
+}
+/*list end*/
+
+
+/*right-content*/
+.right-content{
+   
+}
+.right-content > .col{
+    margin-bottom: 30px;
+    box-shadow: 0 0 5px #aaa;
+    transition: box-shadow ease-in 300ms;
+}
+.right-title{
+    text-align: center;
+    padding: 10px; 
+}
+.right-title > .title1{
+    font-weight: 600;
+    margin-top: 10px;
+}
+.right-title > .describe{
+    min-height: 50px;
+    color: #afb9c3;
+    line-height: 20px;
+    margin: 0;
+}
+.right-title > hr{
+    margin: 10px 0;
+}
+.right-title > .title-icon{
+    margin: 0;
+    padding: 0;
+}
+.right-title > .title-icon > a{
+    margin-right: 10px;
+    color: #afb9c3;
+}
+.right-title > .title-icon > a:hover{
+    color: #1890ff;
+}
+  
+.img-avatar{
+    width: 96px;
+    height: 96px;
+}
+
+.search{
+    display: flex;
+    padding: 20px 10px;
+}
+.search > input{
+    flex: 1;
+    height: 30px;
+    border: 1px solid #afb9c3;
+    border-radius: 5px;
+    text-indent: 10px;
+}
+.search > button{
+    width: 60px;
+    padding: 0px;
+    margin: 0px;
+    margin-left: 8px;
+    background-color: #009688;
+}
+
+/*tag*/
+.tag{
+    padding: 5px 10px 10px 10px;
+}
+.tag > h3{
+    margin: 0px;
+    padding: 0px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    text-indent: 0.5em;
+}
+.tag > hr{
+    border-top: 1px solid #009688;
+    margin: 5px 0;
+}
+.tag > .tag-content{
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+.tag > .tag-content a{
+    display: inline-block;
+    border: 1px solid #ccc;
+    color: #fff;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.link{
+    padding: 10px;
+}
+.link > p{
+    margin: 0;
+}
+.link > hr{
+    border-top: 1px solid #009688;
+    margin: 5px 0;
+}
+.link li{
+    margin-right: 0;
+    margin-bottom: 0;
+    padding: 0 5px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.link li a{
+    text-decoration: none;
+    outline: none;
+    border-bottom: 1px solid #999;
+    word-wrap: break-word;
+    color: #7e8c8d;
+}
+.link li a:hover{
+    color: #111;
+}
+

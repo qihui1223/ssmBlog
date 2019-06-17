@@ -1,0 +1,13 @@
+/*弹出层*/
+.layui-layer-title{text-align: center}
+#layerout {display: none; }
+#layerout .loginitem {margin-left: 20px;margin-top: 30px; }
+#layerout .loginitem input { width: 353px;height: 32px;padding-left: 5px;border: 1px solid #ccc; }
+#layerout .loginitem a {display: block;width: 353px;height: 50px;text-align: center;line-height: 50px;color: #fff;font-size: 30px;background: #428AB4; }
+.layui-layer-title{padding: 0 !important; }
+#Msg{
+	text-align:center;padding-top: 15px;font-size: 14px;
+}
+#registerMsg{
+	text-align:center;padding-top: 15px;font-size: 14px;
+}

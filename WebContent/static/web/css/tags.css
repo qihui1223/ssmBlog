@@ -1,0 +1,25 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2019-05-08 15:32:48
+ * @version $Id$
+ */
+.tags{
+	box-sizing: border-box;
+    padding: 25px 40px 0 40px;
+    background: #fff;
+    min-height: 700px;
+    box-shadow: initial;
+    border-radius: initial;
+}
+
+/*tags start*/
+.all-page-title{
+	text-align: center;
+}
+.tags a {
+    display: inline-block;
+    margin: 10px;
+}
+/*tags end*/

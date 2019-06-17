@@ -1,0 +1,15 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2019-05-08 15:43:09
+ * @version $Id$
+ */
+.about{
+	box-sizing: border-box;
+    padding: 25px 40px 0 40px;
+    background: #fff;
+    min-height: 700px;
+    box-shadow: initial;
+    border-radius: initial;
+}

@@ -1,0 +1,79 @@
+.ck-editor__editable { 
+	min-height: 300px; 
+}
+
+.ckeditor{
+	padding: 10px 0;
+}
+
+.x_panel{
+	width: 100%;
+    padding: 10px 17px;
+    display: inline-block;
+    background: #fff;
+    border: 1px solid #E6E9ED;
+    -webkit-column-break-inside: avoid;
+    -moz-column-break-inside: avoid;
+    column-break-inside: avoid;
+    opacity: 1;
+    transition: all .2s ease;
+}	
+
+.articleTable{
+	width: 100%;
+}
+.articleTable tr{
+	line-height: 50px;
+    border: 1px solid #eee;
+}
+
+.articleTable th{
+	text-align: center;
+    font-weight: normal;
+    padding-right: 10px;
+    font-size: 14px;
+}
+.articleTable th i.require{
+	color: #f60;
+    font-family: serif;
+    margin-right: 5px;
+}
+.articleTable td{
+	/* padding-top: 10px; */
+}
+.articleTable td select{
+	font-size: 13px;
+    border-collapse: collapse;
+    padding: 0 8px;
+    height: 30px;
+    line-height: 30px;
+    width: 170px;
+    margin-right: 10px;
+}
+
+.articleTable td select option{
+	padding: 10px 5px;
+    font-size: 13px;
+    vertical-align: middle;
+}
+
+
+.articleTable td input[type='text'], input[type='date'] {
+    width: 350px;
+    margin-right: 5px;
+    padding: 6px 5px;
+    line-height: 20px;
+    font-size: 12px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    transition: border linear .2s,box-shadow linear .2s;
+    border-radius: 3px;
+}
+
+.help-message{
+	display: contents;
+	padding: 0;
+    margin: 0;
+    color: red !important;
+    padding-left: 8px;
+}

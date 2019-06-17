@@ -1,0 +1,255 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2019-05-08 13:50:52
+ * @version $Id$
+ */
+html ,body {
+	height: 100%;
+    width: 100%;
+    position: relative;
+    font-size: 14px;
+    line-height: 2;
+    color: #555;
+    background: #f5f7f9;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 20px 0 10px;
+}
+
+/*header start*/
+.nav-header {
+    top: 0;  
+    width: 100%;
+    height: 90px;
+    background-color: rgb(44, 62, 80);
+}
+.nav-header-bar {
+    display: flex;
+    height: 100%;
+    /* background-color:rgb(189, 164, 164); */
+    margin: 0 auto;
+}
+.nav-logo {  
+    color: #fff;
+    font-size: 22px;
+    font-weight: bolder;
+    line-height: 90px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.nav-logo > a{
+	color: #fff;
+}
+
+.nav-logo > a:hover{
+	
+}
+.nav-menu {
+    flex: 1;
+    height: 40px;
+    text-align: right;
+    line-height: 30px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.menus:hover {
+    border: 2px solid rgb(240, 240, 240);
+    background-color:rgb(240, 240, 240);
+    border-radius:10px;
+}
+.menus {
+    display: inline-block;
+    margin-top: 30px;
+}
+.menus a:hover {
+    color:#666;
+}
+.menus a {
+    color: #fff;
+    display: block;
+    padding: 0 10px;
+}
+/*header end*/
+.page > .pagination{
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+
+/*bread*/
+.bread{
+	padding-left: 15px;
+    padding-right: 15px;
+}
+.bread-crumb {
+    height: 38px;
+    margin: 22px 0 20px;
+    padding: 0 25px;
+    line-height: 38px;
+    font-size: 14px;
+    box-shadow: 0 0 8px #444;
+    background: #fff;
+}
+.bread-crumb .fl {
+    float: left;
+}
+.bread-crumb .breadTitle {
+    height: 38px;
+    line-height: 36px;
+}
+/*bread end*/
+
+
+/*right-content*/
+.right-content{
+   
+}
+.col{
+	background: #fff;
+    margin-bottom: 20px;
+    box-shadow: 0 0 5px #aaa;
+    transition: box-shadow ease-in 300ms;
+}
+.right-title{
+    text-align: center;
+    padding: 10px; 
+}
+.right-title > .title1{
+    font-weight: 600;
+    margin-top: 10px;
+}
+.right-title > .describe{
+    min-height: 50px;
+    color: #afb9c3;
+    line-height: 20px;
+    margin: 0;
+}
+.right-title > hr{
+    margin: 10px 0;
+}
+.right-title > .title-icon{
+    margin: 0;
+    padding: 0;
+}
+.right-title > .title-icon > a{
+    margin-right: 10px;
+    color: #afb9c3;
+}
+.right-title > .title-icon > a:hover{
+    color: #1890ff;
+}
+  
+.img-avatar{
+    width: 96px;
+    height: 96px;
+}
+
+.search{
+    display: flex;
+    padding: 20px 10px;
+}
+.search > input{
+    flex: 1;
+    height: 30px;
+    border: 1px solid #afb9c3;
+    border-radius: 5px;
+    text-indent: 10px;
+}
+.search > button{
+    width: 60px;
+    padding: 0px;
+    margin: 0px;
+    margin-left: 8px;
+    background-color: #009688;
+}
+
+/*tag*/
+.tag{
+    padding: 5px 10px 10px 10px;
+}
+.tag > h3{
+    margin: 0px;
+    padding: 0px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    text-indent: 0.5em;
+}
+.tag > hr{
+    border-top: 1px solid #009688;
+    margin: 5px 0;
+}
+.tag > .tag-content{
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+.tag > .tag-content a{
+    display: inline-block;
+    border: 1px solid #ccc;
+    color: #fff;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.link{
+    padding: 10px;
+}
+.link > p{
+    margin: 0;
+}
+.link > hr{
+    border-top: 1px solid #009688;
+    margin: 5px 0;
+}
+.link li{
+    margin-right: 0;
+    margin-bottom: 0;
+    padding: 0 5px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.link li a{
+    text-decoration: none;
+    outline: none;
+    border-bottom: 1px solid #999;
+    word-wrap: break-word;
+    color: #7e8c8d;
+}
+.link li a:hover{
+    color: #111;
+}
+
+
+/*footer start*/
+.footer {
+	margin-top: 10px;
+    width: 100%;
+    color:#fff;
+    background-color: rgb(44, 62, 80);
+
+}
+.footer-inner {
+    width:900px;
+    text-align: center;
+    line-height: 40px;
+    /* background-color: red; */
+    margin:0 auto;
+}
+.copyright span {
+    margin: 3px;
+}
+
+.copyright span a {
+    color:#fff;
+}
+/*footer end*/
