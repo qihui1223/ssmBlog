@@ -6,7 +6,7 @@
 ### blog截图
 
 #### 前端页面
-![主页](img\1.png)
+![主页](https://github.com/qihui1223/ssmBlog/blob/master/img/1.png)
 
 ![分类](\img\2.png)
 
