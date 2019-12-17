@@ -5,7 +5,7 @@ ssm框架的个人博客
 #### 后台: Spring + Springmvc + Mybatis + shior
 
 
-[在线预览](http://qihui.pro)
+[在线预览](http://122.51.168.174:8080)
 
 ### blog截图
 
